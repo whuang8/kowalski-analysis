@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import Firebase
 
 class KowalskiAnalysisViewController: UIViewController, SFSpeechRecognizerDelegate {
 
@@ -139,11 +140,37 @@ extension KowalskiAnalysisViewController: UIImagePickerControllerDelegate, UINav
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Get the image captured by the UIImagePickerController
-        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        var image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         // Do something with the images (based on your use case)
-        print("Received a photo :D")
+        print("Received an image! 📸")
         self.kowalskiCurrentlyAnalyzing = false
+        
+        if image.imageOrientation != .up {
+            image = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .up)
+        }
+        
+        // Create VisionImage from UIImage
+        let visionImage = VisionImage(image: image)
+        
+        // Create image labeler with min confience threshold of 0.7
+        let options = VisionOnDeviceImageLabelerOptions()
+        options.confidenceThreshold = 0.7
+        let labeler = Vision.vision().onDeviceImageLabeler(options: options)
+        
+        // Label the image!!
+        labeler.process(visionImage) { labels, error in
+            guard error == nil, let labels = labels else { return }
+            
+            print("Image successfully labeled! 📷🏷")
+            
+            for label in labels {
+                let labelText = label.text
+                let entityId = label.entityID
+                let confidence = label.confidence
+                print("\n\nlabelText: \(labelText)\nentityId: \(String(describing: entityId))\nconfidence: \(String(describing: confidence))\n")
+            }
+        }
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)

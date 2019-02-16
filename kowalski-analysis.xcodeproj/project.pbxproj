@@ -12,6 +12,8 @@
 		3DC2F44922187DFC00D080A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2F44722187DFC00D080A7 /* Main.storyboard */; };
 		3DC2F44B22187DFD00D080A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2F44A22187DFD00D080A7 /* Assets.xcassets */; };
 		3DC2F44E22187DFD00D080A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2F44C22187DFD00D080A7 /* LaunchScreen.storyboard */; };
+		3DC2F4562218A8A600D080A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2F4552218A8A600D080A7 /* GoogleService-Info.plist */; };
+		EF030C523FC133BA7C1A0E3E /* Pods_kowalski_analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B086A2BFAD8A1EA3EDD52E /* Pods_kowalski_analysis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		3DC2F44A22187DFD00D080A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DC2F44D22187DFD00D080A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DC2F44F22187DFD00D080A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DC2F4552218A8A600D080A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6AA2273684B4E7F516E214D1 /* Pods-kowalski-analysis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kowalski-analysis.debug.xcconfig"; path = "Target Support Files/Pods-kowalski-analysis/Pods-kowalski-analysis.debug.xcconfig"; sourceTree = "<group>"; };
+		CF3E353E0105A74CC3ECACD7 /* Pods-kowalski-analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kowalski-analysis.release.xcconfig"; path = "Target Support Files/Pods-kowalski-analysis/Pods-kowalski-analysis.release.xcconfig"; sourceTree = "<group>"; };
+		D7B086A2BFAD8A1EA3EDD52E /* Pods_kowalski_analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kowalski_analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF030C523FC133BA7C1A0E3E /* Pods_kowalski_analysis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01E9E3165884ED54E9DA009E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7B086A2BFAD8A1EA3EDD52E /* Pods_kowalski_analysis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3DC2F43722187DFC00D080A7 = {
 			isa = PBXGroup;
 			children = (
 				3DC2F44222187DFC00D080A7 /* kowalski-analysis */,
 				3DC2F44122187DFC00D080A7 /* Products */,
+				66F0ACD9C35058ABE0631422 /* Pods */,
+				01E9E3165884ED54E9DA009E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +77,19 @@
 				3DC2F44A22187DFD00D080A7 /* Assets.xcassets */,
 				3DC2F44C22187DFD00D080A7 /* LaunchScreen.storyboard */,
 				3DC2F44F22187DFD00D080A7 /* Info.plist */,
+				3DC2F4552218A8A600D080A7 /* GoogleService-Info.plist */,
 			);
 			path = "kowalski-analysis";
+			sourceTree = "<group>";
+		};
+		66F0ACD9C35058ABE0631422 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AA2273684B4E7F516E214D1 /* Pods-kowalski-analysis.debug.xcconfig */,
+				CF3E353E0105A74CC3ECACD7 /* Pods-kowalski-analysis.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DC2F45222187DFD00D080A7 /* Build configuration list for PBXNativeTarget "kowalski-analysis" */;
 			buildPhases = (
+				367F4893B4F03B5D4E911D94 /* [CP] Check Pods Manifest.lock */,
 				3DC2F43C22187DFC00D080A7 /* Sources */,
 				3DC2F43D22187DFC00D080A7 /* Frameworks */,
 				3DC2F43E22187DFC00D080A7 /* Resources */,
+				E18BF415ED2094B47B870BA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +153,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC2F44E22187DFD00D080A7 /* LaunchScreen.storyboard in Resources */,
+				3DC2F4562218A8A600D080A7 /* GoogleService-Info.plist in Resources */,
 				3DC2F44B22187DFD00D080A7 /* Assets.xcassets in Resources */,
 				3DC2F44922187DFC00D080A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		367F4893B4F03B5D4E911D94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kowalski-analysis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E18BF415ED2094B47B870BA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kowalski-analysis/Pods-kowalski-analysis-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kowalski-analysis/Pods-kowalski-analysis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DC2F43C22187DFC00D080A7 /* Sources */ = {
@@ -280,6 +368,7 @@
 		};
 		3DC2F45322187DFD00D080A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AA2273684B4E7F516E214D1 /* Pods-kowalski-analysis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +387,7 @@
 		};
 		3DC2F45422187DFD00D080A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3E353E0105A74CC3ECACD7 /* Pods-kowalski-analysis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
